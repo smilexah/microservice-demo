@@ -1,10 +1,10 @@
 spring:
   application:
-    name: students
+    name: schools
   config:
     import: optional:configserver:http://localhost:8888
   datasource:
-    url: jdbc:mysql://localhost:3306/students
+    url: jdbc:mysql://localhost:3306/schools
     username: root
     password: Meiirzhan05!
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -15,7 +15,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
 
 server:
-  port: 8090
+  port: 8070
 
 eureka:
   instance:
