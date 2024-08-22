@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import sdu.edu.kz.student.entity.Student;
 import sdu.edu.kz.student.service.StudentService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/students")
 @RequiredArgsConstructor
@@ -20,7 +22,12 @@ public class StudentController {
     }
 
     @GetMapping
-    public ResponseEntity<Iterable<Student>> findAllStudents() {
+    public ResponseEntity<List<Student>> findAllStudents() {
         return new ResponseEntity<>(studentService.findAllStudents(), HttpStatus.OK);
+    }
+
+    @GetMapping("/school/{schoolId}")
+    public ResponseEntity<List<Student>> findAllStudentsBySchool(@PathVariable Long schoolId) {
+        return new ResponseEntity<>(studentService.findAllStudentsBySchool(schoolId), HttpStatus.OK);
     }
 }

@@ -22,4 +22,9 @@ public class StudentServiceImpl implements StudentService {
     public List<Student> findAllStudents() {
         return studentRepository.findAll();
     }
+
+    @Override
+    public List<Student> findAllStudentsBySchool(Long schoolId) {
+        return studentRepository.findAllBySchoolId(schoolId);
+    }
 }
