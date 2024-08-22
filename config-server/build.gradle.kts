@@ -21,6 +21,8 @@ extra["springCloudVersion"] = "2023.0.3"
 
 dependencies {
 	implementation("org.springframework.cloud:spring-cloud-config-server")
+	implementation("io.micrometer:micrometer-tracing-bridge-brave")
+	implementation("io.zipkin.reporter2:zipkin-reporter-brave")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
